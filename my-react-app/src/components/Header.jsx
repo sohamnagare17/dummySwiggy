@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
+    const [btn,setbtn]=useState(false);
     return (
       <>
         <div className="flex mt-4 justify-between ">
@@ -10,11 +12,21 @@ const Header = () => {
           </div>
           <div>
           <li className="flex gap-4 mr-5">
-            <ul className="text-lg">Home</ul>
-            <ul className="text-lg">contact us</ul>
-            <ul className="text-lg">support</ul>
+            <ul className="text-lg"><Link to='/'>Home</Link></ul>
+            <ul className="text-lg"><Link to='/contact'>contact us</Link></ul>
+            <ul className="text-lg"><Link to='/about'>About</Link></ul>
             <ul className="text-lg">cart</ul>
+            {btn?<button className='text-lg' onClick={()=>
+                {
+                    setbtn(false)
+                }
+            }>login</button>:<button className='text-lg' onClick={()=>
+            {
+                setbtn(true);
+            }
+            }>logout</button>}
           </li>
+          
           </div>
         </div>
       </>

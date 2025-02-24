@@ -3,7 +3,7 @@ import React from "react";
 const Shimmer = () => {
   return (
     <div className="flex flex-wrap justify-center">
-      {Array(10) // Creating 10 shimmer cards
+      {Array(7) // Creating 10 shimmer cards
         .fill("")
         .map((_, index) => (
           <div key={index} className="bg-gray-300 h-80 w-64 m-2 rounded-lg animate-pulse">
