@@ -10,8 +10,8 @@
       
           async function getdata()
           {
-            //const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.6374444&lng=73.7617595&collection=80479&tags=&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
-            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.6374444&lng=73.7617595&collection=83655&tags=layout_CCS_Cake&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
+            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.6374444&lng=73.7617595&collection=80479&tags=&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
+           // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.6374444&lng=73.7617595&collection=83655&tags=layout_CCS_Cake&sortBy=&filters=&type=rcv2&offset=0&page_type=null");
               const json = await data.json();
               console.log(json);
               const newdata=json?.data?.cards?.flatMap((card) => card.card?.card?.info ? [card] : []);

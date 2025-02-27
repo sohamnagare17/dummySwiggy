@@ -1,8 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import store from '../redux/store';
 
 const Header = () => {
     const [btn,setbtn]=useState(false);
+
+   const cartitems = useSelector(store => store.cart.items)
+   console.log(cartitems);
     return (
       <>
         <div className="flex mt-4 justify-between bg-white ">
@@ -15,7 +20,7 @@ const Header = () => {
             <ul className=" hover:text-orange-500"><Link to='/'>🏠Home</Link></ul>
             <ul className="hover:text-orange-500"><Link to='/contact'>📞contact us</Link></ul>
             <ul className="hover:text-orange-500"><Link to='/about'>ℹ️ About</Link></ul>
-            <ul className="hover:text-orange-500">🛍️cart</ul>
+            <ul className="hover:text-orange-500"><Link to='/cart'>🛍️cart-{cartitems.length} item</Link></ul>
             {btn?<button className='text-lg' onClick={()=>
                 {
                     setbtn(false)
